@@ -1,0 +1,106 @@
+.header {
+    padding: 0;
+    margin: 0;
+    .top-section {
+      background-color: #0c835bb2;
+      padding: 0px 20px;
+      display: flex;
+      justify-content: flex-end;
+      padding: 5px;
+      box-sizing: border-box;
+      width: 100%;
+      ul {
+        display: flex;
+        margin-right: 30px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        padding: 0;
+        list-style: none;
+        align-items: center;
+        li {
+          margin-left: 20px;
+        }
+        a {
+          text-decoration: none;
+          color: #000;
+        }
+      }
+    }
+  
+    .middle-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 70%;
+    }
+
+    .shopping-cart {
+        position: relative;
+        font-size: 25px;
+        margin-right: 75px;
+        padding: 10px;
+        color: var(--accent-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .cart-icon {
+        cursor: pointer;
+        padding: 10px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .cart-icon:hover {
+        color: rgba(1, 78, 24, 0.768); 
+    }
+
+    .cart-count {
+      position: absolute;
+      top: 18px;
+      right: 11px;
+      background-color: red;
+      color: white;
+      border-radius: 60%;
+      padding: 0 6px;
+      font-size: 12px;
+    }
+
+    .search-bar {
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        max-width: 500px; // Giới hạn chiều rộng
+        margin: 0 20px;
+    }
+    .search-input {
+        flex: 1; // Chiếm tối đa không gian còn lại
+        padding: 8px 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px 0 0 4px; // Cạnh trái bo tròn
+        font-size: 16px;
+        
+    
+        &:focus {
+          border-color: var(--accent-color);
+          outline: none;
+          box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+      }
+      .search-icon {
+        background-color: var(--accent-color); // Màu nền cho icon
+        color: #fff;
+        font-size: 20px;
+        padding: 6px 12px;
+        border-radius: 0 4px 4px 0; // Cạnh phải bo tròn
+        cursor: pointer;
+        margin-left: 1px;
+        &:hover {
+          background-color: rgba(1, 78, 24, 0.768); // Màu khi hover
+        }
+      }
+
+  }
+  
+
+  
