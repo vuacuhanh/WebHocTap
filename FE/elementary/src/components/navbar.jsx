@@ -125,7 +125,7 @@ const Navbar = () => {
         <div className="middle-section ">
           <Link to="/" className="logo d-flex align-items-center">
             <h1 className="sitename">
-              <span>X</span>QuanNe
+              <span>HI</span>QuanNe
             </h1>
           </Link>
           <div className="search-bar d-flex align-items-center">
@@ -148,7 +148,7 @@ const Navbar = () => {
         </div>
 
         {/* Navigation Menu */}
-        <nav id="navmenu" className="navmenu d-flex justify-content-center">
+        <nav id="navmenu" className="navmenu">
           <ul>{menus?.map((menu) => renderMenu(menu))}</ul>
           <i className="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>

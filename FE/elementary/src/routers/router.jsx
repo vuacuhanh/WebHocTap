@@ -4,5 +4,7 @@ export const ROUTERS = {
     PROFILE:"thong-tin-ca-nhan",
     NOTIFICATiON:"thong-bao",
     NEW:"tin-tuc",
+    LOGIN:"dang-nhap",
+    REGISTER:"dang-ki",
   }
 };

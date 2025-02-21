@@ -2,6 +2,7 @@ import { ROUTERS } from "./router";
 import HomePage from "../pages/Homepage";
 import { Router,Routes,Route } from "react-router-dom";
 import MasterLayout from "../theme/masterLayout";
+import login from "../Accounts/login";
 
 const renderUserRouter = () => {
     const userRouters = [
@@ -20,6 +21,10 @@ const renderUserRouter = () => {
         {
             path: ROUTERS.STUDENT.NEW,
             component:<profileStudent />,
+        },
+        {
+            path: ROUTERS.STUDENT.LOGIN,
+            component: <login />
         }
     ]
     return(
