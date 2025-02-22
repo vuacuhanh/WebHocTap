@@ -1,49 +1,60 @@
 import { ROUTERS } from "./router";
 import HomePage from "../pages/Homepage";
-import { Router,Routes,Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import MasterLayout from "../theme/masterLayout";
-import login from "../Accounts/login";
+import Login from "../Accounts/login";
+import Register from "../Accounts/register";
+import React from "react";
+import AccountLayout from "../theme/accountLayout";
 
 const renderUserRouter = () => {
     const userRouters = [
         {
             path: ROUTERS.STUDENT.HOME,
             component: <HomePage />,
+            layout: MasterLayout,
         },
         {
             path: ROUTERS.STUDENT.PROFILE,
-            component:<profileStudent />,
+            component:<HomePage />,
         },
         {
-            path: ROUTERS.STUDENT.NOTIFICATiON,
-            component:<profileStudent />,
+            path: ROUTERS.STUDENT.NOTIFICATION, // Fix typo (NOTIFICATiON -> NOTIFICATION)
+            component: <HomePage />,
         },
         {
             path: ROUTERS.STUDENT.NEW,
-            component:<profileStudent />,
+            component: <HomePage />,
         },
         {
             path: ROUTERS.STUDENT.LOGIN,
-            component: <login />
+            component: <Login />,
+            layout: AccountLayout,
+        },
+        {
+            path: ROUTERS.STUDENT.REGISTER,
+            component: <Register/>,
+            layout: AccountLayout,
         }
-    ]
-    return(
-        <MasterLayout>
-            <Routes>
-            {
-                userRouters.map((item,key) => (
-                    <Route key={key} path={item.path} element={item.component} />
-                ))
-            }
-            </Routes>   
-        </MasterLayout>
-        
-    )
-    
-}
 
+    ];
 
-const RouterCustom = () =>{
+    return (
+        <Routes>
+            {userRouters.map((item, key) => {
+                const Layout = item.layout ? item.layout : React.Fragment;
+                return (
+                    <Route key={key}
+                     path={item.path}
+                      element={<Layout>{item.component}</Layout>} />
+                );
+            })}
+        </Routes>
+    );
+};
+
+const RouterCustom = () => {
     return renderUserRouter();
-}
+};
+
 export default RouterCustom;

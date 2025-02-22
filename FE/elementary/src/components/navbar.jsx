@@ -109,12 +109,12 @@ const Navbar = () => {
         <div className="top-section d-flex justify-content-end">
           <ul className="d-flex list-unstyled">
             <li>
-              <Link to="/login" className="nav-link">
+              <Link to="/dang-nhap" className="nav-link">
                 Login
               </Link>
             </li>
             <li>
-              <Link to="/register" className="nav-link">
+              <Link to="/dang-ky" className="nav-link">
                 Register
               </Link>
             </li>

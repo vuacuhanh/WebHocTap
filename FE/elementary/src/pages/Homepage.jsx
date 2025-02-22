@@ -9,7 +9,7 @@ const HomePage = () => {
         <div className="container position-relative" >
           <div className="row gy-5">
             <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-              <h2>WebTHREE</h2>
+              <h2>Xin chào, hôm nay bạn muốn làm gì ?</h2>
               <p>Nơi thắp sáng tri thức, chắp cánh ước mơ cho tất cả những người đẹp</p>
               <div className="d-flex">
                 <a href="#about" className="btn-get-started">Get Started</a>
@@ -28,12 +28,14 @@ const HomePage = () => {
           <div className="container position-relative">
             <div className="row gy-4 mt-5">
               {[
-                { icon: "bi bi-easel", title: "Học tập" },
-                { icon: "bi bi-gem", title: "Sáng tạo" },
-                { icon: "bi bi-geo-alt", title: "Luyện tập" },
-                { icon: "bi bi-command", title: "Vui chơi" },
+                { icon: "bi bi-easel", title: "Máy tính" },
+                { icon: "bi bi-pencil-fill", title: "Chính tả" },
+                { icon: "bi bi-book", title: "Giải bài tập" },
+                { icon: "bi bi-translate", title: "Dịch" },
+                { icon: "bi bi-command", title: "Đổi đơn vị" },
+                { icon: "bi bi-command", title: "Từ điển tiếng anh" },
               ].map((box, index) => (
-                <div className="col-xl-3 col-md-6" key={index}>
+                <div className="col-xl-2 col-md-3" key={index}>
                   <div className="icon-box">
                     <div className="icon"><i className={box.icon}></i></div>
                     <h4 className="title"><a href="#" className="stretched-link">{box.title}</a></h4>

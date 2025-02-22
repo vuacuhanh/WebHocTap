@@ -728,7 +728,7 @@ section,
 
 .hero .icon-box {
   background: var(--surface-color);
-  padding: 60px 30px;
+  padding: 35px 20px;
   position: relative;
   overflow: hidden;
   box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.1);

@@ -1,9 +1,9 @@
-import React from 'react'
+import {React, memo} from 'react'
 
-const accountLayout = (children) => {
+const accountLayout = ({children}) => {
   return (
     <div>{children}</div>
   )
 }
 
-export default accountLayout
+export default memo(accountLayout)
