@@ -6,6 +6,8 @@ import Login from "../Accounts/login";
 import Register from "../Accounts/register";
 import React from "react";
 import AccountLayout from "../theme/accountLayout";
+import CalculatorPage from "../pages/calculator/calculatorPage";
+import SpellingPage from "../pages/spell/spellingPage";
 
 const renderUserRouter = () => {
     const userRouters = [
@@ -35,6 +37,16 @@ const renderUserRouter = () => {
             path: ROUTERS.STUDENT.REGISTER,
             component: <Register/>,
             layout: AccountLayout,
+        },
+        {
+            path:ROUTERS.STUDENT.CALCULATOR,
+            component: <CalculatorPage />,
+            layout: MasterLayout,
+        },
+        {
+            path: ROUTERS.STUDENT.SPELLING,
+            component: <SpellingPage />,
+            layout:MasterLayout
         }
 
     ];

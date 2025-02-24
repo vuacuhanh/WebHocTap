@@ -1,0 +1,71 @@
+.container-sp {
+    width: 800px;
+    border: 1px solid #000;
+    margin: 50px auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.text_check {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.text-spell {
+    height: 400px;
+    width: 700px;
+    resize: none; 
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.text-spell:focus {
+    border-color: var(--accent-color);
+}
+.check-word {
+    margin-top: 15px;
+    display: flex;
+    justify-content: right;
+}
+.btn-check-result {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: right;
+}
+
+.btn-check-result:hover {
+    background-color: var(--accent-color);
+    opacity: 70%;
+    color: #000;
+}
+
+.btn-check-result:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.recommen-ai {
+    width: 700px;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 16px;
+}

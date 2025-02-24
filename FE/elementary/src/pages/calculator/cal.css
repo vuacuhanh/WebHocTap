@@ -1,0 +1,95 @@
+.container-c {
+    background-image: url();
+    background-repeat: no-repeat;
+    align-items: center;
+    background-size: cover;
+
+}
+.calculator {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #000000d7;
+  }
+  
+  .display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 80px;  /* Cố định chiều cao */
+    padding: 10px;
+    border: 2px solid #bbb;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    overflow: hidden; /* Ngăn nội dung tràn ra ngoài */
+  }
+  
+  .input {
+    font-size: 20px;
+    color: #666;
+    height: 30px;  /* Cố định chiều cao */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+  
+  .result {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000;
+    height: 40px;  /* Cố định chiều cao */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    text-align: right;
+  }
+  
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  .button {
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #d1d1d1;
+  }
+  
+  .button:active {
+    background-color: #bbb;
+  }
+  
+  .button:nth-child(4n) { /* Các nút phép toán */
+    background-color: #ff9500;
+    color: white;
+  }
+  
+  .button:nth-child(4n):hover {
+    background-color: #e08900;
+  }
+  
+  .button:nth-child(17) { /* Nút C (clear) */
+    background-color: #ff3b30;
+    color: white;
+  }
+  
+  .button:nth-child(17):hover {
+    background-color: #e02a20;
+  }
+  

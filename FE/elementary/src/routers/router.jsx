@@ -6,5 +6,7 @@ export const ROUTERS = {
     NEW:"/tin-tuc",
     LOGIN:"/dang-nhap",
     REGISTER:"/dang-ky",
+    CALCULATOR:"/may-tinh",
+    SPELLING:"/chinh-ta",
   }
 };

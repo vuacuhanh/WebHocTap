@@ -204,7 +204,7 @@ h6 {
   .navmenu a,
   .navmenu a:focus {
     color: var(--nav-color);
-    padding: 18px 28px;
+    padding: 11px 28px;
     font-size: 18px;
     font-family: var(--nav-font);
     font-weight: 400;
@@ -644,7 +644,7 @@ section,
 .hero {
   width: 100%;
   position: relative;
-  padding: 120px 0 0 0;
+  padding: 40px 0 0 0;
 }
 
 .hero .container {
@@ -728,7 +728,7 @@ section,
 
 .hero .icon-box {
   background: var(--surface-color);
-  padding: 35px 20px;
+  padding: 10px 10px;
   position: relative;
   overflow: hidden;
   box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.1);
@@ -742,8 +742,9 @@ section,
 
 .hero .icon-box .title {
   font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 24px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 21px;
 }
 
 .hero .icon-box .title a {
@@ -756,13 +757,15 @@ section,
   padding-top: 10px;
   display: inline-block;
   transition: all 0.3s ease-in-out;
-  font-size: 48px;
+  font-size: 35px;
   line-height: 1;
   color: var(--accent-color);
 }
 
 .hero .icon-box:hover {
   background-color: var(--accent-color);
+  transition: all 0.5 ease-in-out;
+  transform: translateY(-10px);
 }
 
 .hero .icon-box:hover .title a,
@@ -773,70 +776,63 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
-.about .content .who-we-are {
-  text-transform: uppercase;
-  margin-bottom: 15px;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-}
-
-.about .content h3 {
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.about .content ul {
-  list-style: none;
-  padding: 0;
-}
-
-.about .content ul li {
-  padding-bottom: 10px;
-}
-
-.about .content ul i {
-  font-size: 1.25rem;
-  margin-right: 4px;
-  color: var(--accent-color);
-}
-
-.about .content p:last-child {
-  margin-bottom: 0;
-}
-
-.about .content .read-more {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  font-family: var(--heading-font);
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 1px;
-  padding: 12px 24px;
-  border-radius: 5px;
-  transition: 0.3s;
-  display: inline-flex;
-  align-items: center;
+.search-sub {
+  display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 10px 40px;
 }
-
-.about .content .read-more i {
-  font-size: 18px;
-  margin-left: 5px;
-  line-height: 0;
-  transition: 0.3s;
-}
-
-.about .content .read-more:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-  padding-right: 19px;
-}
-
-.about .content .read-more:hover i {
-  margin-left: 10px;
-}
-
-.about .about-images img {
+.year-sub {
   border-radius: 10px;
+  width: 120px;
+  text-align: center;
+  cursor: pointer;
 }
+.btn-search {
+  border-radius: 10px;
+  font-weight: 500;
+}
+.subject {
+  width: 280px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn-search:hover {
+  border-radius: 10px;
+  background-color: var(--accent-color);
+  opacity: 80%;
+}
+.item-prac {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-in-out, margin-bottom 0.2s ease-in-out, margin-top 0.2s ease-in-out;
+}
+
+.item-prac:hover {
+  cursor: pointer;
+  background-color: var(--accent-color);
+  transform: translateY(-10px);
+  margin-bottom: 15px; 
+  color: var(--nav-hover-color)
+}
+
+.page-sub {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.btn-page-sub {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid rgba(82, 81, 81, 0.3) ;
+}
+.btn-page-sub:hover {
+  background-color: var(--accent-color);
+  border: 2px solid rgba(5, 5, 5, 0.3) ;
+}
+
 
 /*--------------------------------------------------------------
 # Services Section

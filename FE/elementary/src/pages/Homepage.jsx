@@ -1,7 +1,12 @@
 
-import React from 'react';
-
+import {useState, React} from 'react';
+import { FaSearch } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 const HomePage = () => {
+  const [selectedYear, setSelectedYear] = useState(2025);
+  const [selectedSubject, setSelectedSubject] = useState("Toán");
+  const years = [2021, 2022, 2023, 2024, 2025];
+  const subjects = ["Toán", "Tiếng Việt", "Khoa học", "Lịch sử", "Địa lý", "Đạo đức"];
   return (
     <main className="main">
       {/* Hero Section */}
@@ -26,19 +31,20 @@ const HomePage = () => {
 
         <div className="icon-boxes position-relative" >
           <div className="container position-relative">
-            <div className="row gy-4 mt-5">
+            <div className="row gy-4 mt-3">
               {[
-                { icon: "bi bi-easel", title: "Máy tính" },
-                { icon: "bi bi-pencil-fill", title: "Chính tả" },
-                { icon: "bi bi-book", title: "Giải bài tập" },
-                { icon: "bi bi-translate", title: "Dịch" },
-                { icon: "bi bi-command", title: "Đổi đơn vị" },
-                { icon: "bi bi-command", title: "Từ điển tiếng anh" },
+                { icon: "bi bi-easel", title: "Máy tính",path:"/may-tinh" },
+                { icon: "bi bi-pencil-fill", title: "Chính tả", path:"/chinh-ta" },
+                { icon: "bi bi-book", title: "Giải bài tập", path:"/giai-bai-tap" },
+                { icon: "bi bi-translate", title: "Dịch", path:"/dich" },
+                { icon: "bi bi-command", title: "Đổi đơn vị", path:"/doi-don-vi" },
+                { icon: "bi bi-command", title: "Từ điển tiếng anh", path:"/tu-dien" },
               ].map((box, index) => (
                 <div className="col-xl-2 col-md-3" key={index}>
                   <div className="icon-box">
                     <div className="icon"><i className={box.icon}></i></div>
-                    <h4 className="title"><a href="#" className="stretched-link">{box.title}</a></h4>
+                    <h4 className="title"><Link to = {box.path} className="stretched-link">{box.title}</Link>
+                    </h4>
                   </div>
                 </div>
               ))}
@@ -48,45 +54,49 @@ const HomePage = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="about section">
-        <div className="container">
-          <div className="row gy-4">
-            <div className="col-lg-6 content" >
-              <p className="who-we-are">Who We Are</p>
-              <h3>Unleashing Potential with Creative Strategy</h3>
-              <p className="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <ul>
-                {["Ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                  "Duis aute irure dolor in reprehenderit in voluptate velit.",
-                  "Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.",].map((item, index) => (
-                  <li key={index}><i className="bi bi-check-circle"></i> <span>{item}</span></li>
-                ))}
-              </ul>
-              <a href="#" className="read-more"><span>Read More</span><i className="bi bi-arrow-right"></i></a>
-            </div>
-
-            <div className="col-lg-6 about-images" >
-              <div className="row gy-4">
-                <div className="col-lg-6">
-                  <img src="assets/img/about-company-1.jpg" className="img-fluid" alt="About 1" />
-                </div>
-                <div className="col-lg-6">
-                  <div className="row gy-4">
-                    <div className="col-lg-12">
-                      <img src="assets/img/about-company-2.jpg" className="img-fluid" alt="About 2" />
-                    </div>
-                    <div className="col-lg-12">
-                      <img src="assets/img/about-company-3.jpg" className="img-fluid" alt="About 3" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <section id="select-subjects" className="py-4">
+      <div className="container mx-auto p-4 bg-gray-100 rounded-lg shadow">
+        <h3 className="text-xl font-semibold text-green-600 text-center mb-2">Tài liệu môn học</h3>
+        <div className="flex flex-wrap gap-4 search-sub">
+          <select
+            className="p-2 year-sub"
+            value={selectedYear}
+            onChange={(e) => setSelectedYear(e.target.value)}
+          >
+            {years.map((year) => (
+              <option key={year} value={year}>{year}</option>
+            ))}
+          </select>
+          <select
+            className="p-2 subject"
+            value={selectedSubject}
+            onChange={(e) => setSelectedSubject(e.target.value)}
+          >
+            {subjects.map((subject) => (
+              <option key={subject} value={subject}>{subject}</option>
+            ))}
+          </select>
+          <button className="px-4 py-2 btn-search">
+            <FaSearch className="mr-2" /> Tìm kiếm
+          </button>
         </div>
-      </section>
+        <div className="mt-6 grid grid-cols-1 gap-4">
+          {[...Array(10)].map((_, index) => (
+            <div key={index} className="p-4 bg-white item-prac">
+              <span className="text-gray-700">Đề thi {selectedYear} Môn {selectedSubject} - Đề {index + 1}</span>
+              <span className="text-green-500">&gt;</span>
+            </div>
+          ))}
+        </div>
+        <div className="mt-6 page-sub">
+          {[1, 2, 3, 4, 5, "...", 100].map((num, index) => (
+            <button key={index} className="px-3 py-1 btn-page-sub">
+              {num}
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
 
       {/* Services Section */}
       <section id="services" className="services section">
@@ -115,35 +125,6 @@ const HomePage = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section id="features" className="features section light-background">
-        <div className="container section-title" >
-          <h2>Features</h2>
-          <div><span>Check Our</span> <span className="description-title">Features</span></div>
-        </div>
-
-        <div className="container">
-          <div className="row gy-5 justify-content-between">
-            <div className="col-xl-5" >
-              <img src="assets/assets/img//template/eStartup/features.svg" className="img-fluid" alt="Features" />
-            </div>
-
-            <div className="col-xl-6 d-flex">
-              <div className="row align-self-center gy-4">
-                {["Eos aspernatur rem", "Facilis neque ipsa", "Volup amet volupt", "Rerum omnis sint", "Alias possimus", "Repellendus molli"].map((feature, index) => (
-                  <div className="col-md-6" key={index} >
-                    <div className="feature-box d-flex align-items-center">
-                      <i className="bi bi-check"></i>
-                      <h3>{feature}</h3>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
