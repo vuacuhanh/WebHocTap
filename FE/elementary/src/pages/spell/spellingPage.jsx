@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../spell/spell.css";
 
+// Hàm delay để tạo khoảng thời gian chờ
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 const SpellingPage = () => {
   const [text, setText] = useState(""); // Văn bản nhập vào
   const [result, setResult] = useState(""); // Kết quả AI sửa
@@ -9,7 +12,7 @@ const SpellingPage = () => {
 
   const API_KEY = process.env.REACT_APP_OPENAI_API_KEY; // Sử dụng API Key của OpenAI
 
-  const handleCheck = async () => {
+  const handleCheck = async (retryCount = 0) => {
     if (!text || text.trim().length === 0) {
       setResult("Vui lòng nhập văn bản để kiểm tra.");
       return;
@@ -35,6 +38,7 @@ const SpellingPage = () => {
             },
             { role: "user", content: text },
           ],
+          max_tokens: 500,
         },
         {
           headers: {
@@ -51,12 +55,10 @@ const SpellingPage = () => {
       }
     } catch (error) {
       console.error("Lỗi khi gọi API:", error);
-      if (error.response?.status === 429) {
-        setResult("Hệ thống đang bận. Vui lòng thử lại sau 5 giây.");
-        // Thử lại sau 5 giây
-        setTimeout(() => {
-          handleCheck();
-        }, 5000);
+      if (error.response?.status === 429 && retryCount < 3) {
+        setResult("Hệ thống đang bận. Đang thử lại...");
+        await delay(5000); // Chờ 5 giây
+        return handleCheck(retryCount + 1); // Thử lại tối đa 3 lần
       } else {
         setResult(
           error.response?.data?.error?.message || "Có lỗi xảy ra, vui lòng thử lại."

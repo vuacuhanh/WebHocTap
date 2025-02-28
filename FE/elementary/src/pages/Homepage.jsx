@@ -35,7 +35,7 @@ const HomePage = () => {
               {[
                 { icon: "bi bi-easel", title: "Máy tính",path:"/may-tinh" },
                 { icon: "bi bi-pencil-fill", title: "Chính tả", path:"/chinh-ta" },
-                { icon: "bi bi-book", title: "Giải bài tập", path:"/giai-bai-tap" },
+                { icon: "bi bi-book", title: "Giải bài tập", path:"/bai-tap" },
                 { icon: "bi bi-translate", title: "Dịch", path:"/dich" },
                 { icon: "bi bi-command", title: "Đổi đơn vị", path:"/doi-don-vi" },
                 { icon: "bi bi-command", title: "Từ điển tiếng anh", path:"/tu-dien" },

@@ -1,0 +1,84 @@
+/* Container chính */
+.exercise-container {
+    padding: 20px;
+    background-color: #e2e2e2;
+}
+
+.main-sub {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+/* Thanh điều hướng lớp học */
+.grade-nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 20px 0px;
+    justify-content: center;
+}
+
+.grade-link {
+    text-decoration: none;
+    padding: 10px 50px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    color: #333;
+    transform: translateX(-10px);
+}
+
+/* Danh sách môn học dạng lưới 2 cột */
+.subjects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Chia thành 2 cột bằng nhau */
+    gap: 20px; /* Khoảng cách giữa các cột và hàng */
+}
+
+/* Phần môn học */
+.subject-container {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 7px #a8a8a8;
+}
+
+.subject-title {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+}
+
+.material-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.material-link {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+/* Phần "Khám phá thêm" */
+.explore-section { 
+    margin-top: 30px;
+    text-align: center;
+}
+
+.explore-title {
+    font-size: 24px;
+}
+
+.explore-text {
+    margin: 10px 0;
+}
+
+.explore-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}

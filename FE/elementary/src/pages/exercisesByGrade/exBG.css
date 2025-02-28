@@ -1,0 +1,42 @@
+/* Container chính */
+.grade-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Tiêu đề lớp */
+  .grade-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  /* Phần môn học */
+  .subject-container {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  /* Tiêu đề môn học */
+  .subject-title {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+  }
+  
+  /* Danh sách tài liệu */
+  .material-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  /* Link tài liệu */
+  .material-link {
+    text-decoration: none;
+    color: var(--accent-color);
+  }
+  
+  .material-link:hover {
+    text-decoration: underline;
+  }

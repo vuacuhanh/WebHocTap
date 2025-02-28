@@ -8,6 +8,9 @@ import React from "react";
 import AccountLayout from "../theme/accountLayout";
 import CalculatorPage from "../pages/calculator/calculatorPage";
 import SpellingPage from "../pages/spell/spellingPage";
+import ChangeUPage from "../pages/changeUnit/changeUPage";
+import ExercisePage from "../pages/excercises/exercise";
+import ExerciseByGradePage from "../pages/exercisesByGrade/exerciseByGradePage";
 
 const renderUserRouter = () => {
     const userRouters = [
@@ -47,8 +50,22 @@ const renderUserRouter = () => {
             path: ROUTERS.STUDENT.SPELLING,
             component: <SpellingPage />,
             layout:MasterLayout
-        }
-
+        },
+        {
+            path: ROUTERS.STUDENT.CHANGEUNIT,
+            component: <ChangeUPage />,
+            layout:MasterLayout,
+        },
+        {
+            path: ROUTERS.STUDENT.EXERCISE,
+            component: <ExercisePage />,
+            layout:MasterLayout,
+        },
+        {
+            path: ROUTERS.STUDENT.EXERCISE_BY_GRADE, 
+            component: <ExerciseByGradePage />,
+            layout: MasterLayout,
+        },
     ];
 
     return (
