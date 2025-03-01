@@ -11,6 +11,7 @@ import SpellingPage from "../pages/spell/spellingPage";
 import ChangeUPage from "../pages/changeUnit/changeUPage";
 import ExercisePage from "../pages/excercises/exercise";
 import ExerciseByGradePage from "../pages/exercisesByGrade/exerciseByGradePage";
+import ProfileIInPage from "../pages/profileInformation/profileIInPage";
 
 const renderUserRouter = () => {
     const userRouters = [
@@ -21,10 +22,11 @@ const renderUserRouter = () => {
         },
         {
             path: ROUTERS.STUDENT.PROFILE,
-            component:<HomePage />,
+            component:<ProfileIInPage/>,
+            layout:MasterLayout,
         },
         {
-            path: ROUTERS.STUDENT.NOTIFICATION, // Fix typo (NOTIFICATiON -> NOTIFICATION)
+            path: ROUTERS.STUDENT.NOTIFICATION, 
             component: <HomePage />,
         },
         {

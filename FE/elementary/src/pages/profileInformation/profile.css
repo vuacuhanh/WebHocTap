@@ -1,0 +1,130 @@
+/* File profile.css */
+
+/* Giữ nguyên các phần không liên quan */
+.container-profile {
+    width: 100%;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.setting {
+    margin: 10px 0px;
+    align-items: center;
+    display: flex;
+    justify-content: right;
+}
+
+.img_box {
+    width: 100%;
+    max-width: 300px; 
+    margin: 0 auto; 
+    text-align: center;
+}
+
+.img_link {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* Định nghĩa keyframes cho animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg); /* Chỉ xoay, không dịch chuyển */
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.icon_wrapper {
+    display: inline-block; 
+    transform-origin: center; 
+}
+
+.btn_change:hover .icon_wrapper {
+    animation: spin 1.4s linear infinite; 
+}
+
+.icon_setting {
+    font-size: 20px; 
+    cursor: pointer;
+    display: block;
+    margin: 0; 
+    padding: 0;
+    transform: none; 
+}
+
+.btn_change:hover .icon_setting {
+    color: #070707;
+}
+
+/* Nút btn_change */
+.btn_change {
+    padding: 8px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+}
+
+.btn_change:hover {
+    background-color: #21ac42a1;
+    color: #000;
+}
+
+/* Giữ nguyên các phần còn lại */
+.main_information {
+    border: 1px solid #000;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 5px 5px 6px #606060;
+    width: 100%;
+    max-width: 600px;
+}
+
+.name_user {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.name_user:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .container-profile {
+        padding: 10px;
+    }
+
+    .img_box {
+        max-width: 100%;
+    }
+
+    .main_information {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn_change {
+        width: 100%;
+    }
+
+    .main_information {
+        padding: 10px 5px;
+    }
+}

@@ -1,16 +1,14 @@
 import "./Header.scss";
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { MasterLayout } from "./../theme/masterLayout";
-// import { useCart } from '../context/CartContext'; // Giả sử bạn có context giỏ hàng
+import { useAuth } from '../context/AuthContext'; 
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState("Home");
   const [searchQuery, setSearchQuery] = useState("");
-  // const { totalItems } = useCart(); // Lấy tổng số lượng sản phẩm từ context
   const navigate = useNavigate();
+  const { user, logout } = useAuth();
 
-  // Danh sách menu
   const menus = [
     { name: "Trang chủ", path: "/", layout: "MasterLayout" },
     { name: "Giới Thiệu", path: "/about", layout: "MasterLayout" },
@@ -31,52 +29,11 @@ const Navbar = () => {
             { name: "Tiếng Anh 1", path: "/deep-dropdown2" },
           ],
         },
-        {
-          name: "Lớp 2",
-          path: "#",
-          isDropdown: true,
-          submenus: [
-            { name: "Tiếng việt 2", path: "/deep-dropdown1" },
-            { name: "Toán 2", path: "/deep-dropdown2" },
-            { name: "Tiếng Anh 2", path: "/deep-dropdown2" },
-          ],
-        },
-        {
-          name: "Lớp 3",
-          path: "#",
-          isDropdown: true,
-          submenus: [
-            { name: "Tiếng việt 3", path: "/deep-dropdown1" },
-            { name: "Toán 3", path: "/deep-dropdown2" },
-            { name: "Tiếng Anh 3", path: "/deep-dropdown2" },
-          ],
-        },
-        {
-          name: "Lớp 4",
-          path: "#",
-          isDropdown: true,
-          submenus: [
-            { name: "Tiếng việt 4", path: "/deep-dropdown1" },
-            { name: "Toán 4", path: "/deep-dropdown2" },
-            { name: "Tiếng Anh 4", path: "/deep-dropdown2" },
-          ],
-        },
-        {
-          name: "Lớp 5",
-          path: "#",
-          isDropdown: true,
-          submenus: [
-            { name: "Tiếng việt 5", path: "/deep-dropdown1" },
-            { name: "Toán 5", path: "/deep-dropdown2" },
-            { name: "Tiếng Anh 5", path: "/deep-dropdown2" },
-          ],
-        },
       ],
     },
     { name: "Liên Hệ", path: "/contact" },
   ];
 
-  // Hàm render menu
   const renderMenu = (menu) => {
     if (menu.isDropdown) {
       return (
@@ -103,26 +60,49 @@ const Navbar = () => {
   };
 
   return (
-    <header id="header" className="header container-fluid  flex-column sticky-top">
+    <header id="header" className="header container-fluid flex-column sticky-top">
       <div className="d-flex flex-column align-items-center justify-between">
         {/* Top Section */}
         <div className="top-section d-flex justify-content-end">
-          <ul className="d-flex list-unstyled">
-            <li>
-              <Link to="/dang-nhap" className="nav-link">
-                Login
-              </Link>
-            </li>
-            <li>
-              <Link to="/dang-ky" className="nav-link">
-                Register
-              </Link>
-            </li>
-          </ul>
+          <ul className="d-flex list-unstyled align-items-center">
+            {user ? (
+              <li className="dropdown">
+                <span className="nav-link">
+                  <i className="bi bi-person-bounding-box"></i> {user.name}
+                </span>
+                <span className="dropdown-bridge"></span> {/* Phần tử cầu nối */}
+                <ul className="dropdown-menu">
+                  <li>
+                    <Link className="dropdown-item" to="/settings">
+                      Cài đặt
+                    </Link>
+                  </li>
+                  <li>
+                    <button className="dropdown-item" onClick={logout}>
+                      Đăng xuất
+                    </button>
+                  </li>
+                </ul>
+              </li>
+            ) : (
+            <>
+        <li>
+          <Link to="/dang-nhap" className="nav-link">
+            Login
+          </Link>
+        </li>
+        <li>
+          <Link to="/dang-ky" className="nav-link">
+            Register
+          </Link>
+        </li>
+      </>
+    )}
+  </ul>
         </div>
 
         {/* Middle Section */}
-        <div className="middle-section ">
+        <div className="middle-section">
           <Link to="/" className="logo d-flex align-items-center">
             <h1 className="sitename">
               <span>HI</span>QuanNe
@@ -141,9 +121,6 @@ const Navbar = () => {
           </div>
           <div className="shopping-cart" onClick={() => navigate("/shoppingCart")}>
             <i className="bi bi-robot cart-icon"></i>
-            {/* {totalItems > 0 && (
-              <span className="cart-count">{totalItems}</span>
-            )} */}
           </div>
         </div>
 
