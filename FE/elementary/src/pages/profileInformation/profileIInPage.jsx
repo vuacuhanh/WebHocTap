@@ -7,13 +7,13 @@ const ProfileIInPage = () => {
     const birthDay = ["30/3/2003"];
 
     return (
-        <div className='container-profile'> 
+        <div className='container-profile'>
             <div className='setting'>
                 <button className='btn_change'>
                     <span className="icon_wrapper">
                         <i className="bi bi-gear-fill icon_setting"></i>
                     </span>
-                        Cài đặt
+                    Cài đặt
                 </button>
             </div>
             <div className='main_box d-flex'>
@@ -32,7 +32,7 @@ const ProfileIInPage = () => {
                         </Link>
                     ))}
                     <h4>Ngày sinh:</h4>
-                    {birthDay.map((birth) =>(
+                    {birthDay.map((birth) => (
                         <Link key={birth} to="/" className='birthDay_user'>
                             {birth}
                         </Link>

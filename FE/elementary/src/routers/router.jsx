@@ -12,5 +12,6 @@ export const ROUTERS = {
     TRANSLANTE:"/dich",
     EXERCISE:"/bai-tap",
     EXERCISE_BY_GRADE: "/bai-tap/:grade",
+    CONTACT:"/lien-he",
   }
 };

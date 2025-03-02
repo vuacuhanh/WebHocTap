@@ -1,130 +1,171 @@
-/* File profile.css */
-
-/* Giữ nguyên các phần không liên quan */
 .container-profile {
     width: 100%;
-    max-width: 1100px;
-    margin: 50px auto;
-    padding: 10px;
-    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .setting {
-    margin: 10px 0px;
-    align-items: center;
+    margin: 10px 0;
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.btn_change {
+    padding: 10px 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn_change:hover {
+    background-color: #21ac42;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn_change::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: scale(0);
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    pointer-events: none;
+}
+
+.btn_change:active::after {
+    animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.icon_wrapper {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.btn_change:hover .icon_wrapper {
+    transform: rotate(360deg);
+}
+
+.icon_setting {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.main_box {
+    padding: 5px 30px;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .img_box {
     width: 100%;
-    max-width: 300px; 
-    margin: 0 auto; 
+    max-width: 300px;
+    margin: 20px auto;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .img_link {
     width: 100%;
     height: auto;
-    border-radius: 10px;
-    margin: 20px 0;
+    border-radius: 15px;
+    transition: transform 0.5s ease, filter 0.3s ease;
 }
 
-/* Định nghĩa keyframes cho animation */
-@keyframes spin {
-    0% {
-        transform: rotate(0deg); /* Chỉ xoay, không dịch chuyển */
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+.img_box:hover .img_link {
+    transform: scale(1.05);
+    filter: brightness(1.1);
 }
 
-.icon_wrapper {
-    display: inline-block; 
-    transform-origin: center; 
-}
-
-.btn_change:hover .icon_wrapper {
-    animation: spin 1.4s linear infinite; 
-}
-
-.icon_setting {
-    font-size: 20px; 
-    cursor: pointer;
-    display: block;
-    margin: 0; 
-    padding: 0;
-    transform: none; 
-}
-
-.btn_change:hover .icon_setting {
-    color: #070707;
-}
-
-/* Nút btn_change */
-.btn_change {
-    padding: 8px 25px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: 600;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-    display: flex; 
-    align-items: center; 
-    gap: 8px; 
-}
-
-.btn_change:hover {
-    background-color: #21ac42a1;
-    color: #000;
-}
-
-/* Giữ nguyên các phần còn lại */
 .main_information {
-    border: 1px solid #000;
-    padding: 10px;
+    padding: 30px;
     margin: 20px 0;
-    border-radius: 10px;
-    box-shadow: 5px 5px 6px #606060;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    animation: slideInUp 0.8s ease-in-out;
     width: 100%;
-    max-width: 600px;
+    max-width: 700px;
 }
 
-.name_user {
+.name_user, .birthDay_user {
     display: block;
     margin-top: 10px;
     color: #007bff;
     text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.name_user:hover {
+.name_user:hover, .birthDay_user:hover {
+    color: #21ac42;
+    transform: translateX(10px);
     text-decoration: underline;
 }
 
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @media (max-width: 768px) {
-    .container-profile {
+    .main_box {
+        flex-direction: column;
         padding: 10px;
     }
-
     .img_box {
         max-width: 100%;
     }
-
     .main_information {
-        margin-left: 0;
+        margin: 0;
+        padding: 20px;
     }
 }
 
 @media (max-width: 480px) {
     .btn_change {
         width: 100%;
+        justify-content: center;
     }
-
-    .main_information {
-        padding: 10px 5px;
+    .main_information h4 {
+        font-size: 16px;
     }
 }

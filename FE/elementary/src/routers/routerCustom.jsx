@@ -12,7 +12,7 @@ import ChangeUPage from "../pages/changeUnit/changeUPage";
 import ExercisePage from "../pages/excercises/exercise";
 import ExerciseByGradePage from "../pages/exercisesByGrade/exerciseByGradePage";
 import ProfileIInPage from "../pages/profileInformation/profileIInPage";
-
+import ContactPage from "../pages/contact/contactPage";
 const renderUserRouter = () => {
     const userRouters = [
         {
@@ -68,6 +68,11 @@ const renderUserRouter = () => {
             component: <ExerciseByGradePage />,
             layout: MasterLayout,
         },
+        {
+            path: ROUTERS.STUDENT.CONTACT,
+            component: <ContactPage/>,
+            layout: MasterLayout,
+        }
     ];
 
     return (
