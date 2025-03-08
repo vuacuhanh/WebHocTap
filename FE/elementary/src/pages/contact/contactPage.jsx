@@ -87,23 +87,32 @@ const ContactPage = () => {
       <div className="aboutme_section">
         <div className="snow-container snow-container-background"></div> {/* Tuyết phía sau */}
         <div className="aboutme_content">
-          <div className="row">
-            <div className='skill_box col-12 col-sm-6'>
-              <h2>About Me</h2>
+          <div className="row main_about">
+            <div className='skill_box  col-sm-6'>
+              <span className='about-text'>About Me</span>
               <p>I am a passionate software developer with a love for anime and technology.</p>
               <ul className='skill_list'>
                 <li className='skill_item'>
-                  <i className="bi bi-database-fill-gear icon_skill"></i>
+                  <div className="skill_content">
+                    <i className="bi bi-database-fill-gear icon_skill"></i>
+                    <span className='name_skill'>SQL Server, MySQL, Neon4j</span>
+                  </div>
                 </li>
                 <li className='skill_item'>
-                  <i className="bi bi-bootstrap-fill icon_skill"></i>
+                  <div className="skill_content">
+                    <i className="bi bi-bootstrap-fill icon_skill"></i>
+                    <span className='name_skill'>SQL Server, MySQL, Neon4j</span>
+                  </div>
                 </li>
                 <li className='skill_item'>
-                  <i className="bi bi-braces icon_skill"></i>
+                  <div className="skill_content">
+                    <i className="bi bi-braces icon_skill"></i>
+                    <span className='name_skill'>SQL Server, MySQL, Neon4j</span>
+                  </div>
                 </li>
               </ul>
             </div>
-            <div className='img_about col-12 col-sm-6'>
+            <div className='img_about col-sm-6'>
               <div className="totoro_wrapper">
                 <img src={totoroImage} alt="Totoro" className='img_totoro' />
               </div>
@@ -114,9 +123,25 @@ const ContactPage = () => {
       </div>
 
       {/* Phần Other */}
-      <div className="contact_container d-flex">
+      <div className="project_container d-flex">
         <div className="other_section">
-          {/* Nội dung cho phần Other */}
+          <span className='caption-project'>SOME OTHER PROJECTS </span>
+          <div className='main_project'>
+            <ul className='list_project row'>
+              <li className='item_project col-5'>
+                <span className='name_project'><a href=''>Hệ thống quản lý sân bóng</a></span>
+              </li>
+              <li className='item_project col-5'>
+                <span className='name_project'><a href=''>Hệ thống bán sách</a></span>
+              </li>
+              <li className='item_project col-5'>
+                <span className='name_project'><a href=''>Amazing Tech</a></span>
+              </li>
+              <li className='item_project col-5'>
+                <span className='name_project'><a href=''>WebS</a></span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

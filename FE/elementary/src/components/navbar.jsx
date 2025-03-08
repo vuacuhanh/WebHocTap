@@ -31,7 +31,7 @@ const Navbar = () => {
         },
       ],
     },
-    { name: "Liên Hệ", path: "/contact" },
+    { name: "Liên Hệ", path: "/lien-he" },
   ];
 
   const renderMenu = (menu) => {

@@ -310,7 +310,11 @@
         transform: translateY(110vh);
     }
 }
-
+.main_about {
+    display: flex;
+    justify-content: space-between;
+    width: 1100px;
+}
 .aboutme_content {
     max-width: 1000px;
     margin: 0 auto;
@@ -321,13 +325,21 @@
 }
 
 
-
+.about-text{
+    font-size: 3.5rem;
+    font-weight: 600;
+}
 .skill_box {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
+.skill_box .span  {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+    
 .skill_list {
     text-decoration: none;
     display: flex;
@@ -336,19 +348,51 @@
     padding: 0;
     margin: 0;
     width: 100%;
+    gap: 20px;
 }
 
 .skill_item {
-    padding: 20px;
-    background-color: #fbfbfba4;
-    margin: 10px;
+    padding: 30px 60px;
+    width: 170px;
+    background-color: rgba(251, 251, 251, 0.6431372549);
+    margin: 0;
     border-radius: 10px;
     text-decoration: none;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.skill_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    margin-left: -20px;
+    text-align: center;
+    margin-top: 25px;
+    padding: 10px 12px;
 }
 
 .icon_skill {
     font-size: 2rem;
     color: #333;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.name_skill {
+    width: 100px;
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+    margin-top: 5px; 
+    max-width: 100%; 
+    overflow-wrap: break-word; 
+    margin-left: -15px;
 }
 
 .img_about {
@@ -383,7 +427,67 @@
     z-index: -2;
     box-shadow: 17px 5px 10px #7e7e7e72;
 }
+.project_container {
+    width: 1000px;
+    max-width: 100%;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
 
+.other_section {
+    width: 100%;
+}
+
+.main_project {
+    margin-top: 20px;
+}
+
+.list_project {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.item_project {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+.caption-project {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.name_project {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+
+    a {
+        text-decoration: none;
+        color: #3498db;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #2ecc71;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .item_project {
+        width: 100%; 
+    }
+}
 @keyframes runBorder {
     100% {
         transform: rotate(0deg);

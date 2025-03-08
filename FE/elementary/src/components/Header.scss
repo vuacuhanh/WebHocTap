@@ -164,3 +164,121 @@
     }
   }
 }
+
+
+.footer {
+  background-color: #1a1a1a; /* Xám đậm gần đen, hài hòa với #000 */
+  color: #fff; /* Trắng cho chữ chính */
+  padding: 15px 0 0;
+  font-family: 'Arial', sans-serif;
+  border-top: 3px solid #71c55d; /* Viền trên màu xanh lá */
+  margin-bottom: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.footer-row {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #71c55d; /* Xanh lá cho tiêu đề */
+}
+
+.footer-col p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #fff; /* Trắng cho liên kết */
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #71c55d; /* Xanh lá khi hover */
+  }
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+
+  a {
+    color: #fff; /* Trắng cho icon mạng xã hội */
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #71c55d; /* Xanh lá khi hover */
+    }
+  }
+}
+
+.creater {
+  background-color: #000; /* Đen cho phần creater */
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  border-top: 1px solid #fff; /* Viền trên màu trắng để nổi trên nền đen */
+  margin: 0;
+  line-height: 1;
+
+  .creater_by_me {
+    font-size: 14px;
+    color: #fff; /* Trắng cho chữ */
+    font-weight: 500;
+    display: inline-block;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .creater {
+    padding: 8px 0;
+  }
+}
+
+/* Loại bỏ margin mặc định của body hoặc html */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
